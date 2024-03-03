@@ -1,7 +1,19 @@
-#TASK
+#The first task
 
-1. Create 50 records in database with the following column fields “sno, customer name, age, phone, location, created_at” and dummy data
-2. Create a single page application to display the above data in table format with search option, and pagination with 20 records per page.
-3. The created_at column data has to be displayed in two separate columns as “date” and “time”
-4. The search functionality will search the data by the column "name" or "location".
-5. There should be an option to sort the data either by "date" or by "time".
+Create 50 records in the database with the following column fields: "sno", "customer name", "age", "phone", "location", and "created_at", and populate them with dummy data.
+
+#The second task
+
+Develop a single-page application that presents the data in a tabular format. Include options for search and pagination with 20 records displayed per page.
+
+#The third task
+
+Display the "created_at" column data in two separate columns as "date" and "time".
+
+#The fourth task
+
+The search functionality should allow users to search for data based on the "name" or "location" columns.
+
+#The fifth task
+
+Provide an option to sort the data either by "date" or by "time".
