@@ -1,9 +1,9 @@
- q q qconst express = require('express');
+const express = require('express');
 const { Pool } = require('pg');
 require('dotenv').config();
 const cors=require('cors');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5005;
 
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -52,7 +52,6 @@ app.post('/api/customers', async (req, res) => {
     }
   });
   
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
