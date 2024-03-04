@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Datatable.css';
+import { TextField ,Button, Typography } from "@mui/material";
 
 const Datatable = () => {
   const [customers, setCustomers] = useState([]);
@@ -12,7 +13,7 @@ const Datatable = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/customers');
+        const response = await axios.get('http://localhost:5005/api/customers');
         setCustomers(response.data);
         setError(null);
       } catch (error) {
@@ -49,12 +50,23 @@ const Datatable = () => {
   };
 
   return (
+   
     <div>
-        <h1><u>Zithara Technologies Round-2</u></h1>
-        <h1>Task : React and Node JS Application Development</h1>
-      <h2>Customers List</h2>
+        <br></br>
+        <div style ={{display : "flex", justifyContent : "center"}}>
+        
+
+        <Typography variant={"h3"}> React & Node.js Customer Records Interface with PostgreSQL </Typography>
+
+      </div>
+      <br></br>
       {error && <div className="error">{error}</div>}
-      <input type="text" className="search-input" value={searchTerm} onChange={handleSearchChange} placeholder="Search by name or location" />
+      <div style= {{display:"flex",justifyContent : "center"}}>
+      <TextField type="text" label="Search by name or location" className="search-input" value={searchTerm} onChange={handleSearchChange} variant="outlined" />
+      </div>
+      <br></br>
+      
+
 
       <table>
         <thead>
@@ -64,8 +76,8 @@ const Datatable = () => {
             <th>Age</th>
             <th>Phone</th>
             <th>Location</th>
-            <th>Created At (Date)</th>
-            <th>Created At (Time)</th>
+            <th>Created At(Date)</th>
+            <th>Created At(Time)</th>
           </tr>
         </thead>
         <tbody>
@@ -83,8 +95,8 @@ const Datatable = () => {
         </tbody>
       </table>
       <div className="pagination">
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-        <button onClick={nextPage} disabled={indexOfLastItem >= filteredCustomers.length}>Next</button>
+        <Button variant ="contained" onClick={prevPage} disabled={currentPage === 1}>Previous</Button>
+        <Button variant="contained" onClick={nextPage} disabled={indexOfLastItem >= filteredCustomers.length}>Next</Button>
       </div>
     </div>
   );
